@@ -6,8 +6,15 @@
   <mat-tab label="Habilitar Orden"><app-enable-orders></app-enable-orders></mat-tab>
   <mat-tab label="Habilitar Usuario"><app-enable-user></app-enable-user> </mat-tab>
   <mat-tab label="Mi Orden"><app-my-order></app-my-order></mat-tab>
-  <mat-tab label="Ver Orden"><app-show-order></app-show-order></mat-tab>
+  <mat-tab label="Ver Ordenes"><app-show-order></app-show-order></mat-tab>
 
 </mat-tab-group>
 
-<div *ngIf="this.authService.isLoggedIn() && this.authService.tpUser==0">SU USUARIO NO SE ENCUENTRA HABILIATDO</div>
+<div  *ngIf="this.authService.isLoggedIn() && this.authService.tpUser==0">
+    <mat-chip-list class="mat-chip-list-stacked">
+        <mat-chip *ngFor="let chip of availableColors" selected [color]="chip.color" id="message">
+          {{chip.name}}
+        </mat-chip>
+      </mat-chip-list>
+      <img src="nino.jpg" id="img">
+</div>

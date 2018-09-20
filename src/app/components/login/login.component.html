@@ -1,11 +1,11 @@
 <div id="login" *ngIf="!this.authService.isLoggedIn()">
-  <button mat-stroked-button color="warn" (click)="autenticar()">    
+  <button mat-stroked-button color="warn" (click)="autenticar()" >    
       Inicia con Google
   </button>
 </div>
 <div id="logged" *ngIf="this.authService.isLoggedIn()">
 
-  <button mat-stroked-button color="warn" (click)="logout()">   
+  <button mat-stroked-button color="warn" (click)="logout()" id="log">   
       Salir
   </button>
 </div>

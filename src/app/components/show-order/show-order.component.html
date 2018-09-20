@@ -9,33 +9,20 @@
   
     <!-- Name Column -->
     <ng-container matColumnDef="Usuario">
-      <th mat-header-cell *matHeaderCellDef> user </th>
+      <th mat-header-cell *matHeaderCellDef> Usuario </th>
       <td mat-cell *matCellDef="let element"> {{element.user}} </td>
     </ng-container>
   
     <!-- Weight Column -->
     <ng-container matColumnDef="tp_snack">
-      <th mat-header-cell *matHeaderCellDef> Tipo Snack </th>
-      <td mat-cell *matCellDef="let element"> {{element.tp_snack}} </td>
+      <th mat-header-cell *matHeaderCellDef> Tipo Empanada </th>
+      <td mat-cell *matCellDef="let element"> {{MostrarTipo(element.tp_snack)}} </td>
     </ng-container>
-
-    <ng-container matColumnDef="Aprobar">
-        <th mat-header-cell *matHeaderCellDef> Aprobar </th>
-        <td mat-cell *matCellDef="let element"> <button mat-icon-button id="aprobar">
-          <mat-icon class="material-icons md-40">check_circle</mat-icon>
-        </button></td>
-      </ng-container>
-
-      <ng-container matColumnDef="Denegar">
-        <th mat-header-cell *matHeaderCellDef> Denegar </th>
-        <td mat-cell *matCellDef="let element"><button mat-icon-button id="denegar">
-          <mat-icon class="material-icons md-40">remove_circle</mat-icon>
-        </button></td>
-      </ng-container>
 
 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
 <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
 
 
 

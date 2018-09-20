@@ -1,0 +1,16 @@
+#message{
+    width: 20%;
+    left: 28%;
+    margin-top: 10%;
+    font-size: 20px;
+    text-align: center;
+    position: absolute;
+}
+
+#img{
+    background-image: url("nino.jpg");
+    width: 20%;
+    position: absolute;
+    left: 51%;
+    margin-top: 10%;
+}
