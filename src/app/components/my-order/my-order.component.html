@@ -1,3 +1,19 @@
-<p>
-  my-order works!
-</p>
+<div class="divHacerPedido">
+  <form *ngIf="ValorSeleccionado==''" (ngSubmit)="addOrder()" [formGroup]="ElegirSnackForm">
+    <mat-form-field>
+      <mat-select formControlName="tipoSnack" placeholder="Tipo de snack" required>
+        <mat-option *ngFor="let snack of TpSnacks" [value]="snack.$key">
+          {{snack.description}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="ElegirSnackForm.get('tipoSnack').invalid">{{getErrorMessage("tipoSnack")}}</mat-error>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary" [disabled]="!ElegirSnackForm.valid">Elegir</button>
+  </form>
+  <div *ngIf="ValorSeleccionado!=''">
+    <span> Snack Seleccionado: {{getTypeSnack(ValorSeleccionado)}} </span>
+    <button mat-icon-button color="primary" (click)="delOrder()">
+      <mat-icon aria-label="x">delete</mat-icon>
+    </button>
+  </div>
+</div>

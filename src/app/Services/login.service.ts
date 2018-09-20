@@ -3,6 +3,7 @@ import { Observable, Subscription } from "rxjs";
 import { AngularFireAuth } from "angularfire2/auth";
 import * as firebase from 'firebase';
 import { ManageDBService } from './manage-db.service';
+import { User } from '../models/User';
 
 
 @Injectable({
@@ -15,6 +16,7 @@ export class LoginService {
   private subscrition2: Subscription;
   private once: Boolean;
   public tpUser: number = 2;
+  public userData: User;
 
   constructor(private _firebaseAuth: AngularFireAuth, public dbService: ManageDBService) {
     this.user = null;
@@ -44,9 +46,9 @@ export class LoginService {
   verifyUserLogged() {
     //rdevuelve un numero 
     //0: usuario dentro de los no aceptados
-    //1: usuario dentro de los aceptado pendiente por ser aceptado
+    //1: usuario dentro de los aceptado 
     //2: usuario nuevo
-
+    this.userData = null;
     this.subscrition1 = this.dbService.getUser(this.userDetails.uid.toString())
       .snapshotChanges()
       .subscribe(item => {
@@ -92,6 +94,11 @@ export class LoginService {
         if (!this.once) {
           this.once = true;
           this.verifyUserLogged();
+          this.userData = {
+            $key: this.userDetails.uid.toString(),
+            name: this.userDetails.displayName.toString(),
+            email: this.userDetails.email.toString()
+          };
         }
 
         return true;

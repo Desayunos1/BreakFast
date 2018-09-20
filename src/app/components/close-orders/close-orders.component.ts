@@ -8,7 +8,7 @@ import { ManageDBService } from '../../Services/manage-db.service';
   styleUrls: ['./close-orders.component.css']
 })
 export class CloseOrdersComponent implements OnInit {
-  refSnackBar:MatSnackBarRef<any>;
+  //refSnackBar:MatSnackBarRef<any>;
   constructor(public snackBar: MatSnackBar,
     public dbService: ManageDBService) { }
 
@@ -16,12 +16,13 @@ export class CloseOrdersComponent implements OnInit {
     this.openSnackBar("Esta Seguro Que Desea Finalizar Los Ingresos", "SI");
   }
   openSnackBar(message: string, action: string) {
-    this.refSnackBar = this.snackBar.open(message, action, {
+    //this.refSnackBar = 
+    this.snackBar.open(message, action, {
       duration: 5000,
-    });
-    this.refSnackBar.onAction().subscribe(()=>{
+    }).onAction().subscribe(()=>{
       this.closeOrders();
     });
+    //this.refSnackBar
   }
 
   closeOrders(){

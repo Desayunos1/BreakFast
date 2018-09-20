@@ -1,7 +1,7 @@
 <mat-tab-group *ngIf="this.authService.isLoggedIn() && this.authService.tpUser==1">
 
   <mat-tab label="Elegir Comprador"> <app-choose-buyer></app-choose-buyer> </mat-tab>
-  <mat-tab label="Cerrar Orden"><app-close-orders></app-close-orders></mat-tab>
+  <mat-tab label="Cerrar Orden"></mat-tab>
   <mat-tab label="Administar Opciones"><app-crudoption></app-crudoption></mat-tab>
   <mat-tab label="Habilitar Orden"><app-enable-orders></app-enable-orders></mat-tab>
   <mat-tab label="Habilitar Usuario"><app-enable-user></app-enable-user> </mat-tab>

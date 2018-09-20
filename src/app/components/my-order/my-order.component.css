@@ -1,0 +1,13 @@
+.button-row button,
+.button-row a {
+  margin-right: 8px;
+}
+.divHacerPedido{
+    background: rgba(117, 111, 111, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+    width: 300px;
+}
+form button{
+    margin: 0 10px;
+}
